@@ -1,0 +1,27 @@
+
+"Introduction", 
+"Basic Exploration", 
+"Goals per Competition", 
+"Goals per Season", 
+"Goals per Club", 
+"Goals per Playing Position", 
+"Goals per Game Minute", 
+"Goals per Type", 
+"Scoreline After Goals",
+"Opponents", 
+"Favorite Opponents", 
+"Assists", 
+"Goals per Venue"
+
+
+
+"""
+    **Cristiano Ronaldo dos Santos Aveiro** is a Portuguese professional footballer who plays as a forward for Al-Nassr and captains the Portugal national team.
+    
+    - **Current team**: Al-Nassr (#7 / Forward)
+    - **Born**: February 5, 1985 (age 39 years), Funchal, Portugal
+    - **Height**: 1.87 m
+    - **Partner**: Georgina Rodríguez (2017–)
+    - **Salary**: 26.52 million GBP (2022)
+    - **Children**: Cristiano Ronaldo Jr., Alana Martina, Eva Maria, Mateo Ronaldo
+    """
