@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Charges Predictor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex justify-center items-center h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-4xl">
+        <h1 class="text-3xl font-bold text-center mb-6 text-blue-600">Insurance Charges Predictor</h1>
+        
+        <div class="grid grid-cols-2 gap-6">
+            <div>
+                <label class="block mb-2 font-semibold">Age</label>
+                <input type="number" id="age" class="w-full p-3 border rounded-lg" min="18" max="100" value="30">
+                
+                <label class="block mt-4 mb-2 font-semibold">Sex</label>
+                <select id="sex" class="w-full p-3 border rounded-lg">
+                    <option>Male</option>
+                    <option>Female</option>
+                </select>
+                
+                <label class="block mt-4 mb-2 font-semibold">BMI</label>
+                <input type="number" id="bmi" class="w-full p-3 border rounded-lg" min="10" max="50" step="0.1" value="25">
+                
+                <label class="block mt-4 mb-2 font-semibold">Children</label>
+                <input type="number" id="children" class="w-full p-3 border rounded-lg" min="0" max="10" value="0">
+            </div>
+            
+            <div>
+                <label class="block mb-2 font-semibold">Smoker</label>
+                <select id="smoker" class="w-full p-3 border rounded-lg">
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+                
+                <label class="block mt-4 mb-2 font-semibold">Region</label>
+                <select id="region" class="w-full p-3 border rounded-lg">
+                    <option>Northwest</option>
+                    <option>Northeast</option>
+                    <option>Southeast</option>
+                    <option>Southwest</option>
+                </select>
+                
+                <button onclick="predictCharges()" class="w-full bg-blue-600 text-white py-3 rounded-lg mt-6 hover:bg-blue-700">Predict</button>
+                
+                <p id="result" class="text-center font-bold mt-6 text-xl text-green-600"></p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        async function predictCharges() {
+            const data = {
+                age: document.getElementById("age").value,
+                sex: document.getElementById("sex").value,
+                bmi: document.getElementById("bmi").value,
+                children: document.getElementById("children").value,
+                smoker: document.getElementById("smoker").value,
+                region: document.getElementById("region").value
+            };
+            
+            const response = await fetch("/predict", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data)
+            });
+            
+            const result = await response.json();
+            document.getElementById("result").innerText = `Predicted Charges: $${result.predicted_charges}`;
+        }
+    </script>
+</body>
+</html>
