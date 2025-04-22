@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LLAMA 4 Based Football Player Detection</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-slate-900 to-slate-800 min-h-screen text-white flex items-center justify-center p-4">
+  <div class="w-full max-w-4xl bg-slate-950/90 rounded-2xl shadow-2xl p-8 border border-slate-800">
+
+    <h1 class="text-3xl md:text-4xl font-bold text-center mb-6 text-green-400">⚽ LLAMA 4 Based Football Player Detection</h1>
+    <p class="text-center text-gray-300 mb-8">Upload an image of a football player to detect and get details using AI.</p>
+
+    <form method="POST" enctype="multipart/form-data" class="flex flex-col items-center space-y-4">
+      <input type="file" name="image" accept="image/*" required class="bg-slate-800 text-gray-200 p-2 rounded-lg border border-slate-700 focus:outline-none focus:ring-2 focus:ring-green-500">
+      <button type="submit" class="bg-green-500 hover:bg-green-600 text-black font-semibold px-6 py-2 rounded-lg transition duration-300">
+        Upload & Detect
+      </button>
+    </form>
+
+    {% if result_img %}
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10 items-start">
+        <div class="bg-slate-900 p-4 rounded-xl border border-slate-700 shadow-md">
+          <h2 class="text-xl font-semibold text-green-300 mb-4">Detected Player</h2>
+          <img src="{{ url_for('static', filename='uploads/' + result_img) }}" class="rounded-lg shadow-lg">
+        </div>
+
+        <div class="bg-slate-900 p-4 rounded-xl border border-slate-700 shadow-md">
+          <h2 class="text-xl font-semibold text-green-300 mb-4">Player Info</h2>
+          <pre class="whitespace-pre-wrap text-gray-300">{{ player_info }}</pre>
+        </div>
+      </div>
+    {% elif player_info %}
+      <div class="mt-6 bg-red-600/80 p-4 rounded-xl text-white font-semibold text-center">
+        {{ player_info }}
+      </div>
+    {% endif %}
+
+    <div class="mt-10 text-center text-sm text-gray-500">
+      Built with ❤️ for Football Fans using Flask, OpenCV & Groq API
+    </div>
+  </div>
+</body>
+</html>
