@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MCQ Generator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Upload Document to Generate MCQs</h2>
+        <form method="POST" action="/generate" enctype="multipart/form-data" class="border p-4 bg-white shadow-sm">
+            <div class="mb-3">
+                <label for="file" class="form-label">Choose a file (PDF, DOCX, or TXT):</label>
+                <input class="form-control" type="file" name="file" id="file" required>
+            </div>
+            <div class="mb-3">
+                <label for="num_questions" class="form-label">Number of Questions:</label>
+                <input class="form-control" type="number" name="num_questions" id="num_questions" min="1" value="5" required>
+            </div>
+            <button class="btn btn-primary" type="submit">Generate MCQs</button>
+        </form>
+    </div>
+</body>
+</html>
