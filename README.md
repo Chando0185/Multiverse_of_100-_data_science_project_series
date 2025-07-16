@@ -69,6 +69,7 @@ This repository is a growing collection of 100+ data science projects designed t
 
 > ✅ *The list is continuously being updated. Stay tuned for more!*
 
+Most of the other projects are hosted in separate GitHub repos—so be sure to explore those for the complete multiverse experience. And don’t forget to check out the YouTube tutorials for step-by-step guidance and deep dives!
 ---
 
 ## 📺 Social Links
