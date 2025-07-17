@@ -1,0 +1,19 @@
+📄 1. AI_in_Drug_Discovery.pdf
+Question:
+🧠 “What role does AI play in drug repurposing and discovery?”
+
+📄 2. Pharmacokinetics_of_Paracetamol.pdf
+Question:
+🧠 “How is paracetamol metabolized in the body?”
+
+📄 3. Vaccine_Development_Workflow.pdf
+Question:
+🧠 “What are the main stages of vaccine development?”
+
+📄 4. CRISPR_in_Gene_Therapy.pdf
+Question:
+🧠 “How does CRISPR help in gene therapy?”
+
+📄 5. Role_of_Pharmacovigilance.pdf
+Question:
+🧠 “Why is pharmacovigilance important after a drug is released?”
