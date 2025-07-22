@@ -1,0 +1,71 @@
+
+
+### 🌾 **General Agriculture Knowledge**
+
+1. What are the major cropping seasons in India?
+2. What is the difference between Kharif and Rabi crops?
+3. Explain the process of soil preparation before sowing.
+4. What are some organic methods to improve soil fertility?
+5. Which states are the largest producers of rice in India?
+
+---
+
+### 🚜 **Farming Techniques**
+
+6. What is zero tillage farming?
+7. How does crop rotation benefit farmers?
+8. What are the advantages of drip irrigation?
+9. Explain the SRI (System of Rice Intensification) method.
+10. How to protect crops from pests using natural methods?
+
+---
+
+### ☁️ **Weather & Climate Impact**
+
+11. How does monsoon affect Kharif crops?
+12. What should farmers do during drought conditions?
+13. How to plan farming based on weather forecasts?
+
+---
+
+### 🧪 **Fertilizers & Pesticides**
+
+14. What is the recommended NPK ratio for wheat?
+15. Are chemical fertilizers harmful to long-term crop yield?
+16. Suggest some bio-pesticides for vegetable farming.
+
+---
+
+### 📉 **Government Schemes & Support**
+
+17. What is PM-KISAN scheme?
+18. How to apply for a soil health card?
+19. Explain the benefits of crop insurance under PMFBY.
+20. Are there subsidies available for buying tractors?
+
+---
+
+### 💧 **Water & Resource Management**
+
+21. How can farmers harvest rainwater?
+22. What are the benefits of using solar-powered pumps?
+
+---
+
+### 🌱 **Crop-Specific Questions**
+
+23. What are the best practices to grow sugarcane?
+24. How to increase the yield of pulses in dry regions?
+25. Which hybrid seeds are recommended for maize?
+
+---
+
+### 🧠 **Smart Farming / Technology**
+
+26. What is precision agriculture?
+27. How can AI help Indian farmers?
+28. What mobile apps help with pest detection?
+
+---
+
+Let me know if you want these in **Hindi or Bengali**, or need **expected answers** for test automation.

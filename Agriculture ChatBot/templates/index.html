@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Agriculture Chatbot - Groq</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-green-50 text-gray-800 font-sans min-h-screen flex items-center justify-center p-6">
+  <div class="max-w-xl w-full bg-white rounded-xl shadow-lg p-6">
+    <h1 class="text-3xl font-bold mb-4 text-green-700 text-center">🌾 Agriculture Chatbot</h1>
+    <p class="text-center text-gray-600 mb-6">Ask farming questions by typing or uploading voice</p>
+
+    <!-- Text Input Form -->
+    <form id="textForm" class="flex gap-2 mb-6">
+      <input
+        type="text"
+        name="text"
+        id="textInput"
+        class="flex-1 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+        placeholder="Type your question..."
+        autocomplete="off"
+      />
+      <button
+        type="submit"
+        class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700"
+      >
+        Ask
+      </button>
+    </form>
+
+    <!-- Audio Upload Form -->
+    <form id="audioForm" enctype="multipart/form-data" class="flex gap-2 mb-6">
+      <input
+        type="file"
+        name="audio"
+        id="audioInput"
+        accept="audio/*"
+        class="flex-1 text-sm border border-gray-300 rounded-lg"
+      />
+      <button
+        type="submit"
+        class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+      >
+        Upload
+      </button>
+    </form>
+
+    <!-- Result Box -->
+    <div id="result" class="bg-gray-100 p-4 rounded-lg shadow-inner hidden" role="region" aria-live="polite">
+      <h2 class="font-semibold text-lg text-green-800 mb-2">📝 Answer:</h2>
+      <p id="responseText" class="text-gray-700 mb-3 whitespace-pre-wrap"></p>
+      <audio id="audioPlayer" controls class="w-full hidden"></audio>
+    </div>
+  </div>
+
+  <script>
+    // Text form submit handler
+    document.getElementById('textForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const text = document.getElementById('textInput').value.trim();
+      if (!text) return;
+
+      const formData = new FormData();
+      formData.append('text', text);
+
+      try {
+        const res = await fetch('/chat', {
+          method: 'POST',
+          body: formData
+        });
+        const data = await res.json();
+        showResponse(data.text, data.voice);
+      } catch (err) {
+        alert('Error communicating with server.');
+      }
+    });
+
+    // Audio upload submit handler
+    document.getElementById('audioForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const fileInput = document.getElementById('audioInput');
+      if (!fileInput.files.length) return alert('Please select an audio file.');
+
+      const formData = new FormData();
+      formData.append('audio', fileInput.files[0]);
+
+      try {
+        const res = await fetch('/chat', {
+          method: 'POST',
+          body: formData
+        });
+        const data = await res.json();
+        showResponse(data.text, data.voice);
+      } catch (err) {
+        alert('Error communicating with server.');
+      }
+    });
+
+    function showResponse(text, voiceUrl = null) {
+      const resultDiv = document.getElementById('result');
+      const responseText = document.getElementById('responseText');
+      const audioPlayer = document.getElementById('audioPlayer');
+
+      responseText.textContent = text;
+      resultDiv.classList.remove('hidden');
+
+      if (voiceUrl) {
+        audioPlayer.src = voiceUrl;
+        audioPlayer.classList.remove('hidden');
+        audioPlayer.load();
+      } else {
+        audioPlayer.classList.add('hidden');
+        audioPlayer.src = '';
+      }
+    }
+  </script>
+</body>
+</html>
