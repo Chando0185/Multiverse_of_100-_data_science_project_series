@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Groq Code Assistant</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100 min-h-screen text-gray-800 font-sans">
+  <div class="max-w-3xl mx-auto mt-12 p-8 bg-white rounded-3xl shadow-2xl border border-gray-200">
+    <h1 class="text-4xl font-extrabold text-center text-indigo-700 mb-8">🚀 Groq Code Assistant</h1>
+
+    <form method="POST" enctype="multipart/form-data" class="space-y-6">
+      <div>
+        <label class="block text-lg font-semibold text-gray-700 mb-1">📷 Upload Coding Problem Image</label>
+        <input type="file" name="image" accept="image/*" class="block w-full text-sm text-gray-700 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100">
+      </div>
+
+      <div>
+        <label class="block text-lg font-semibold text-gray-700 mb-1">📝 Or Paste Your Coding Problem</label>
+        <textarea name="query" rows="4" class="w-full p-4 border border-gray-300 rounded-xl shadow-sm focus:ring-2 focus:ring-indigo-400 focus:outline-none" placeholder="Write a Python function to..."></textarea>
+      </div>
+
+      <button type="submit" class="w-full bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-3 rounded-xl text-lg font-semibold shadow-md hover:from-indigo-600 hover:to-purple-700 transition-all duration-300">
+        🔍 Generate & Execute
+      </button>
+    </form>
+
+    {% if extracted %}
+    <div class="mt-10">
+      <h2 class="text-2xl font-bold text-purple-700 mb-3">📄 Extracted Problem</h2>
+      <pre class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-xl text-gray-800 whitespace-pre-wrap">{{ extracted }}</pre>
+    </div>
+    {% endif %}
+
+    {% if solution %}
+    <div class="mt-10">
+      <h2 class="text-2xl font-bold text-green-700 mb-3">💻 Solution</h2>
+      <div class="bg-[#1e1e1e] text-green-200 rounded-xl p-4 font-mono text-sm overflow-x-auto shadow-inner">
+        <pre class="whitespace-pre-wrap"><code>{{ solution }}</code></pre>
+      </div>
+    </div>
+    {% endif %}
+
+    {% if result %}
+    <div class="mt-10">
+      <h2 class="text-2xl font-bold text-blue-700 mb-3">🚀 Execution Results</h2>
+      <div class="bg-white border border-blue-200 p-4 rounded-xl shadow-sm">
+        {{ result|safe }}
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</body>
+</html>
