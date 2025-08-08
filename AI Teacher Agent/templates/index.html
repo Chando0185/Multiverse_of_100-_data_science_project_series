@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Teaching Agent Team</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-b from-sky-50 to-white text-gray-800">
+  <div class="max-w-5xl mx-auto p-6">
+    <h1 class="text-4xl font-extrabold mb-8 text-center text-blue-800">👩‍🏫 AI Teaching Agent Suite</h1>
+
+    {% if error %}
+    <div class="bg-red-100 text-red-700 px-4 py-3 rounded mb-4 shadow">{{ error }}</div>
+    {% endif %}
+
+    <form method="POST" class="bg-white p-6 rounded-2xl shadow-md mb-10">
+      <div class="mb-4">
+        <label class="block text-sm font-semibold text-gray-600 mb-2">Enter a Topic to Learn About:</label>
+        <input type="text" name="topic" class="w-full p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-blue-300" placeholder="e.g., Quantum Computing" required />
+      </div>
+      <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 w-full font-semibold transition">🎓 Generate Reports</button>
+    </form>
+
+    {% if responses %}
+    <h2 class="text-2xl font-bold mb-8 text-center text-blue-900">📘 Learning Suite for: <span class="text-blue-600">{{ topic }}</span></h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Professor -->
+      <section class="bg-white p-5 rounded-xl shadow-lg border-l-4 border-blue-500">
+        <h3 class="text-xl font-bold text-blue-700 mb-3">📖 Professor - Key Concepts</h3>
+        <div class="text-sm leading-relaxed whitespace-pre-wrap prose prose-sm text-gray-800 max-w-none">
+          {{ responses.professor | safe }}
+        </div>
+      </section>
+
+      <!-- Academic Advisor -->
+      <section class="bg-white p-5 rounded-xl shadow-lg border-l-4 border-green-500">
+        <h3 class="text-xl font-bold text-green-700 mb-3">🧭 Academic Advisor - Learning Roadmap</h3>
+        <div class="text-sm leading-relaxed whitespace-pre-wrap prose prose-sm text-gray-800 max-w-none">
+          {{ responses.advisor | safe }}
+        </div>
+      </section>
+
+      <!-- Research Librarian -->
+      <section class="bg-white p-5 rounded-xl shadow-lg border-l-4 border-purple-500">
+        <h3 class="text-xl font-bold text-purple-700 mb-3">📚 Research Librarian - Recommended Resources</h3>
+        <div class="text-sm leading-relaxed whitespace-pre-wrap prose prose-sm text-gray-800 max-w-none">
+          {{ responses.librarian | safe }}
+        </div>
+      </section>
+
+      <!-- Teaching Assistant -->
+      <section class="bg-white p-5 rounded-xl shadow-lg border-l-4 border-pink-500">
+        <h3 class="text-xl font-bold text-pink-700 mb-3">📝 Teaching Assistant - Exercises</h3>
+        <div class="text-sm leading-relaxed whitespace-pre-wrap prose prose-sm text-gray-800 max-w-none">
+          {{ responses.assistant | safe }}
+        </div>
+      </section>
+    </div>
+    {% endif %}
+
+    <footer class="mt-12 text-center text-gray-500 text-sm">
+      Built with ❤️ using Flask, Groq, and Tailwind CSS<br>
+      <span class="text-xs">Designed for Students & Educators</span>
+    </footer>
+  </div>
+</body>
+</html>
