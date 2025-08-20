@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Medical Imaging Diagnosis Agent</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Enable Tailwind Typography plugin for .prose -->
+    <script>
+        tailwind.config = {
+          plugins: [require('@tailwindcss/typography')],
+        }
+    </script>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center p-6">
+    <div class="w-full max-w-4xl bg-white p-8 rounded shadow-lg">
+        <h1 class="text-3xl font-bold mb-6 text-center">🏥 Medical Imaging Diagnosis Agent</h1>
+
+        <form method="POST" enctype="multipart/form-data" class="space-y-4">
+            <label class="block">
+                <span class="font-semibold">Groq API Key:</span>
+                <input type="password" name="groq_api_key" value="{{ groq_api_key }}" required
+                    class="mt-1 block w-full rounded border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"/>
+            </label>
+
+            <label class="block">
+                <span class="font-semibold">Upload Medical Image:</span>
+                <input type="file" name="image" accept=".png,.jpg,.jpeg,.dicom" required
+                    class="mt-1 block w-full"/>
+                <p class="text-sm text-gray-500 mt-1">Supported formats: PNG, JPG, JPEG, DICOM</p>
+            </label>
+
+            <button type="submit" class="w-full bg-indigo-600 text-white font-bold py-2 rounded hover:bg-indigo-700">
+                Analyze Image
+            </button>
+        </form>
+
+        {% if error %}
+            <div class="mt-6 p-4 bg-red-100 text-red-700 rounded">
+                <strong>Error:</strong> {{ error }}
+            </div>
+        {% endif %}
+
+        {% if result_html %}
+            <div class="mt-8 prose max-w-none">
+                {{ result_html|safe }}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
