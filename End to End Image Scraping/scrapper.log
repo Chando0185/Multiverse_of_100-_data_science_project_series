@@ -1,0 +1,32 @@
+INFO:werkzeug: * Running on all addresses (0.0.0.0)
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://127.0.0.1:8000
+ * Running on http://10.127.161.245:8000 (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with watchdog (windowsapi)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 127-184-119
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2025 15:01:31] "GET / HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'D:\\python38\\Lib\\site-packages\\pymongo\\settings.py', reloading
+INFO:werkzeug: * Detected change in 'D:\\python38\\Lib\\site-packages\\flask\\app.py', reloading
+INFO:werkzeug: * Detected change in 'D:\\python38\\Lib\\site-packages\\werkzeug\\debug\\__init__.py', reloading
+INFO:werkzeug: * Detected change in 'D:\\python38\\Lib\\site-packages\\werkzeug\\serving.py', reloading
+INFO:werkzeug: * Restarting with watchdog (windowsapi)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 127-184-119
+INFO:werkzeug: * Detected change in 'D:\\python38\\Lib\\http\\server.py', reloading
+INFO:werkzeug: * Detected change in 'D:\\python38\\Lib\\socketserver.py', reloading
+INFO:werkzeug: * Detected change in 'D:\\python38\\Lib\\threading.py', reloading
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2025 15:02:20] "POST /review HTTP/1.1" 200 -
+INFO:werkzeug: * Restarting with watchdog (windowsapi)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 127-184-119
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2025 15:03:33] "POST /review HTTP/1.1" 200 -
+INFO:werkzeug: * Running on all addresses (0.0.0.0)
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://127.0.0.1:8000
+ * Running on http://10.127.161.245:8000 (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with watchdog (windowsapi)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 127-184-119
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2025 15:06:43] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [02/Dec/2025 15:10:03] "POST /review HTTP/1.1" 200 -
