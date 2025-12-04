@@ -66,6 +66,17 @@ This repository is a growing collection of 100+ data science projects designed t
 | 41  | Tiktok Reviews Sentimental Analysis | NLP | [Project Link](./Tiktok%20Reviews%20Sentimental%20Analysis) |
 | 42  | Travel Planner | LLM + Tools | [Project Link](./Travel%20Planner) |
 | 43  | Youtube RAG | RAG + LLM | [Project Link](./Youtube%20RAG) |
+| 44   | Checking Password Strength | Utility / ML | [Project Link](./Checking%20Password%20Strength) |
+| 45   | End to End Image Scraping | Web Scraping | [Project Link](./End%20to%20End%20Image%20Scraping) |
+| 46   | Finance RAG | RAG + Finance Data | [Project Link](./Finance%20RAG) |
+| 47   | AI Teacher Agent | AI Agent | [Project Link](./AI%20Teacher%20Agent) |
+| 48   | AI Medical Imaging Diagnosis Agent | AI + CV + Medical | [Project Link](./AI%20Medical%20Imaging%20Diagnosis%20Agent) |
+| 49   | AI Code Assistant | AI Agent / Automation | [Project Link](./AI%20Code%20Assistant) |
+| 50   | AI Breakup Recovery Squad Agent | AI Agent + NLP | [Project Link](./AI%20Breakup%20Recovery%20Squad%20Agent) |
+| 51   | AI Data Analysis Agent | AI Agent + Data Analysis | [Project Link](./AI%20Data%20Analysis%20Agent) |
+| 52   | AI E‑Commerce Chatbot | AI Agent + E‑commerce | [Project Link](./AI%20E-Commerce%20Chatbot) |
+| 53   | Agriculture ChatBot | AI Agent + Agriculture | [Project Link](./Agriculture%20ChatBot) |
+| ...  | *More projects upcoming — stay tuned!* | | |
 
 > ✅ *The list is continuously being updated. Stay tuned for more!*
 
